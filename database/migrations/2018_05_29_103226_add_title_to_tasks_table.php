@@ -14,7 +14,7 @@ class AddTitleToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('title, 10');
+            $table->string('title' , 10);
         });
     }
 
