@@ -15,9 +15,13 @@
                 <p>Status: {!! nl2br(e($task->status)) !!}</p>
             </div>
             <div>
-                @if (Auth::id() == $task->user_id)
+                @if (Auth::user()->id == $task->user_id)
                     {!! Form::open(['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                    {!! Form::close() !!}
+                    
+                    {!! Form::open(['route' => ['tasks.edit', $task->id], 'method' => 'get']) !!}
+                        {!! Form::submit('edit', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
             </div>

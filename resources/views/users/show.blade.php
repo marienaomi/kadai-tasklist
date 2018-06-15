@@ -18,7 +18,7 @@
                 <li><a href="#">Followings</a></li>
                 <li><a href="#">Followers</a></li>
             </ul>
-            @if (Auth::id() == $user->id)
+            @if (Auth::user()->id == $user->id)
                   {!! Form::open(['route' => 'tasks.store']) !!}
                       <div class="form-group">
                           Task
@@ -29,9 +29,11 @@
                           {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                       </div>
                   {!! Form::close() !!}
-            @endif
-            @if (count($tasks) > 0)
-                @include('tasks.tasks', ['tasks' => $tasks])
+           
+                   @if (count($tasks) > 0)
+                       @include('tasks.tasks', ['tasks' => $tasks])
+                   @endif
+                
             @endif
         </div>
     </div>
