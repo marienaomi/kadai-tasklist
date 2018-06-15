@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Auth::user()->id == $task->user_id)
+
 
 <h1>タスク新規作成ページ</h1>
 
@@ -24,9 +24,7 @@
         {!! Form::submit('投稿', ['class' => 'btn btn-success']) !!}
 
     {!! Form::close() !!}
-    @else
-    {!! redirect('/'); !!}
-    @endif
+   
 <!-- Write content for each page here -->
     </div>
 </div>

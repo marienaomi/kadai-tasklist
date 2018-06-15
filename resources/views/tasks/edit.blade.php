@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Auth::user()->id == $task->user_id)
 
 <h1>id: {{ $task->id }} のタスク編集ページ</h1>
 
@@ -23,9 +22,7 @@
         {!! Form::submit('更新', ['class' => 'btn btn-warning'] ) !!}
 
     {!! Form::close() !!}
-    @else
-    {!! redirect('/'); !!}
-    @endif
+    
 <!-- Write content for each page here -->
     </div>
 </div>
