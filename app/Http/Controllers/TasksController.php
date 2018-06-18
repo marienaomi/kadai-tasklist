@@ -130,7 +130,7 @@ class TasksController extends Controller
         $task->status = $request->status;
         $task->save();
         
-        }else {
+        
             return redirect('/');
         }
     }
